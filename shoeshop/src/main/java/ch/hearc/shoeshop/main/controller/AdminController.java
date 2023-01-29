@@ -79,6 +79,26 @@ public class AdminController {
 	}
 	
 	/**
+	 * Return a form to show a shoe
+	 * @param model
+	 * @return template name
+	 */
+	@PostMapping(value = "/show-shoe")
+	public String showShoeForm(Model model,@RequestParam Integer id) {
+	    
+		Shoe shoeToShow = catalogueService.getShoeById(id);
+		
+		model.addAttribute("shoe", shoeToShow);   
+	    model.addAttribute("showList",Boolean.FALSE);
+	    model.addAttribute("showNew",Boolean.TRUE);
+	    
+	    model.addAttribute("isEdit",Boolean.FALSE);
+	    model.addAttribute("isNew",Boolean.FALSE);
+
+		return "admin/accueil";
+	}
+	
+	/**
 	 * Return home template
 	 * @param model
 	 * @return template name

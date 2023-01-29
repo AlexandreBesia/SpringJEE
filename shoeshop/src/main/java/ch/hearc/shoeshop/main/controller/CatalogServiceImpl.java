@@ -45,8 +45,6 @@ public class CatalogServiceImpl implements CatalogService{
 		shoeRepository.findAll().forEach(result::add);
 		
 		return shoeRepository.findAll(PageRequest.of(page, PAGE_SIZE)).toList();
-
-		//return result;
 	}
 
 	/**
