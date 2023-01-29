@@ -74,6 +74,7 @@ public class AdminController {
 	    
 	    model.addAttribute("isEdit",Boolean.TRUE);
 	    model.addAttribute("isNew",Boolean.FALSE);
+	    model.addAttribute("showCurrent",Boolean.FALSE);
 
 		return "admin/accueil";
 	}
@@ -90,7 +91,8 @@ public class AdminController {
 		
 		model.addAttribute("shoe", shoeToShow);   
 	    model.addAttribute("showList",Boolean.FALSE);
-	    model.addAttribute("showNew",Boolean.TRUE);
+	    model.addAttribute("showNew",Boolean.FALSE);
+	    model.addAttribute("showCurrent",Boolean.TRUE);
 	    
 	    model.addAttribute("isEdit",Boolean.FALSE);
 	    model.addAttribute("isNew",Boolean.FALSE);

@@ -27,6 +27,9 @@
 		</nav>
 		<div class="table-responsive">
     		<table class="table align-middle">
+				<div th:if="${showCurrent}">
+					<div th:replace="fragment/shoe :: show-shoe"></div>
+				</div>
 				<div th:if="${showNew}">
 					<div th:replace="fragment/shoe :: new-shoe"></div>
 				</div>
