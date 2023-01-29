@@ -29,6 +29,5 @@ public class ShoeDataLoader implements CommandLineRunner {
 			shoeRepository.save(shoe4);
 			shoeRepository.save(shoe5);
 		}
-		System.out.println(shoeRepository.count());
 	}
 }

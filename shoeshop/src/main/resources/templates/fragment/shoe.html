@@ -1,8 +1,8 @@
 <div th:fragment="shoe-list">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-<link href="public/css/general.css" rel="stylesheet">
-<h1>Shoes list</h1>	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+	<link href="public/css/general.css" rel="stylesheet">
+	<h1>Shoes list</h1>	
 	<div class="table-responsive">
     	<table class="table align-middle">
 			 <thead>
@@ -28,7 +28,7 @@
 					<td th:if="${isAdmin}">
 						<form action="#" th:action="@{/admin/delete-shoe}" th:object="${shoe}" method="post">
 							<input type="hidden" th:value="${shoe.id}" name="id" />
-							<button type="submit" class="btn btn-danger">Delete</button>
+							<button type="submit" class="btn btn-danger"><span class="bi-trash3-fill"></span></button>
 						</form>
 					</td>
 					<td th:if="${isAdmin}">
