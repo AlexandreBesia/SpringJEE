@@ -30,7 +30,7 @@ public class CatalogController {
 	 */
 	@GetMapping(value = {"/","/accueil"})
 	public String showAccueilPage(Model model, @RequestParam(defaultValue="0") Integer pageNumber) {
-	    model.addAttribute("shoes", catalogService.getAllShoesFromCatalog(pageNumber));   
+	    model.addAttribute("shoes", catalogService.getAllShoesFromCatalog(Math.abs(pageNumber)));   
 	    model.addAttribute("isPublic",Boolean.TRUE);
 	    model.addAttribute("pageNumber", pageNumber);
 		return "accueil"; 
@@ -46,7 +46,7 @@ public class CatalogController {
 	@PostMapping(value = {"/evaluate"})
 	public String evaluateShoe(Model model,@RequestParam Integer note,@RequestParam Integer shoeId, @RequestParam Integer pageNumber) {
 	    catalogService.saveEvaluation(shoeId, note);
-		model.addAttribute("shoes", catalogService.getAllShoesFromCatalog(pageNumber));   
+		model.addAttribute("shoes", catalogService.getAllShoesFromCatalog(Math.abs(pageNumber)));   
 		return "redirect:/";
 	}
 	

@@ -88,7 +88,7 @@ public class AdminController {
 	    model.addAttribute("showList",Boolean.TRUE);
 	    model.addAttribute("showNew",Boolean.FALSE);
 	    model.addAttribute("isAdmin",Boolean.TRUE);
-	    model.addAttribute("pageNumber", pageNumber);
+	    model.addAttribute("pageNumber", Math.abs(pageNumber));
 	    model.addAttribute("shoes", catalogueService.getAllShoesFromCatalog(pageNumber));  
 	    return "admin/accueil";
 	}

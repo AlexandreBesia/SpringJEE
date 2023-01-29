@@ -8,7 +8,7 @@
 		<link rel="shortcut icon" type="image/png" th:href="@{../favicon.ico}"/>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(to right, #4e42f5, #96f4f5);">
+		<nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(to right, #6c757d, #c2c9cf);">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#">Shoeshop Admin</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,19 +17,23 @@
 				<div class="navbar-nav me-auto mb-2 mb-lg-0">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="/admin/new-shoe">New Shoe <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="/accueil">Home<span class="sr-only">(current)</span></a>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
-		<div th:if="${showNew}">
-			<div th:replace="fragment/shoe :: new-shoe"></div>
+		<div class="table-responsive">
+    		<table class="table align-middle">
+				<div th:if="${showNew}">
+					<div th:replace="fragment/shoe :: new-shoe"></div>
+				</div>
+				<div th:if="${showList}">
+					<div th:replace="fragment/shoe :: shoe-list"></div>
+					<a class="btn btn-dark" href="/admin/new-shoe">Make a new shoe</a>
+				</div>
+				<div th:replace="fragment/common :: webjar-footer"></div>
+    		</table>
 		</div>
-		<div th:if="${showList}">
-			<div th:replace="fragment/shoe :: shoe-list"></div>
-			<a class="btn btn-primary" href="/admin/new-shoe">Save a new shoe</a>
-		</div>
-		<div th:replace="fragment/common :: webjar-footer"></div>
 	</body>
 </html>

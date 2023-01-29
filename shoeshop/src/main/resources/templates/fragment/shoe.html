@@ -1,63 +1,70 @@
 <div th:fragment="shoe-list">
-	<h1>Liste des chaussures</h1>	
-	<table class="table">
-		 <thead class="thead-dark">
-			<tr>
-			  <th scope="col">Name</th>
-			  <th scope="col">Price</th>
-			  <th scope="col">Color</th>
-			  <th scope="col">Size</th>
-			  <th scope="col">Stock</th>
-			  <th scope="col" th:if="${isAdmin}"/>
-			  <th scope="col" th:if="${isAdmin}"/>
-			  <th scope="col" th:if="${isPublic}">Evaluate</th>
-			  <th scope="col">Popularity</th>
-			</tr>
-		 </thead>
-		 <tbody>
-			<tr th:each="shoe: ${shoes}"> 
-				<td th:text="${shoe.name}" />
-				<td th:text="${shoe.price}" />
-				<td th:text="${shoe.color}" />
-				<td th:text="${shoe.size}" />
-				<td th:text="${shoe.stock}" />
-				<td th:if="${isAdmin}">
-					<form action="#" th:action="@{/admin/delete-shoe}" th:object="${shoe}" method="post">
-						<input type="hidden" th:value="${shoe.id}" name="id" />
-						<button type="submit" class="btn btn-danger">Delete</button>
-					</form>
-				</td>
-				<td th:if="${isAdmin}">
-					<form action="#" th:action="@{/admin/edit-shoe}" th:object="${shoe}" method="post">
-						<input type="hidden" th:value="${shoe.id}" name="id" />
-						<button type="submit" class="btn btn-warning">Modify</button>
-					</form>
-				</td>
-				<td th:if="${isPublic}">
-					<form action="#" th:action="@{/evaluate}" method="post">
-						<select name="note" style="width: 40px"> class="form-control" id="eval">
-						  <option>1</option>
-						  <option>2</option>
-						  <option>3</option>
-						  <option>4</option>
-						  <option>5</option>
-						</select>
-						<input type="hidden" th:value="${shoe.id}" name="shoeId" />
-						<button type="submit" class="btn btn-warning">Vote</button>
-					</form>
-				</td>
-				<td th:text="${shoe.popularite}" />
-			</tr>
-		</tbody>
-	</table>
-	<form action="#" th:action="@{/accueil}" method="get">
-		<input type="hidden" th:value="${pageNumber}+1" name="pageNumber" />
-		<button type="submit" class="btn btn-warning">Next</button>
-	</form>
-	<form action="#" th:action="@{/accueil}" method="get">
-		<input type="hidden" th:value="${pageNumber}-1" name="pageNumber" />
-		<button type="submit" class="btn btn-warning">Previous</button>
-	</form>
+<h1>Liste des chaussures</h1>	
+	<div class="table-responsive">
+    	<table class="table align-middle">
+			 <thead>
+				<tr>
+				  <th scope="col">Name</th>
+				  <th scope="col">Price</th>
+				  <th scope="col">Color</th>
+				  <th scope="col">Size</th>
+				  <th scope="col">Stock</th>
+				  <th scope="col" th:if="${isAdmin}"/>
+				  <th scope="col" th:if="${isAdmin}"/>
+				  <th scope="col" th:if="${isPublic}">Evaluate</th>
+				  <th scope="col">Popularity</th>
+				</tr>
+			 </thead>
+			 <tbody>
+				<tr th:each="shoe: ${shoes}"> 
+					<td th:text="${shoe.name}" />
+					<td th:text="${shoe.price}" />
+					<td th:text="${shoe.color}" />
+					<td th:text="${shoe.size}" />
+					<td th:text="${shoe.stock}" />
+					<td th:if="${isAdmin}">
+						<form action="#" th:action="@{/admin/delete-shoe}" th:object="${shoe}" method="post">
+							<input type="hidden" th:value="${shoe.id}" name="id" />
+							<button type="submit" class="btn btn-danger">Delete</button>
+						</form>
+					</td>
+					<td th:if="${isAdmin}">
+						<form action="#" th:action="@{/admin/edit-shoe}" th:object="${shoe}" method="post">
+							<input type="hidden" th:value="${shoe.id}" name="id" />
+							<button type="submit" class="btn btn-secondary">Modify</button>
+						</form>
+					</td>
+					<td th:if="${isPublic}">
+						<form action="#" th:action="@{/evaluate}" method="post">
+							<select name="note" style="width: 40px"> class="form-control" id="eval">
+							  <option>1</option>
+							  <option>2</option>
+							  <option>3</option>
+							  <option>4</option>
+							  <option>5</option>
+							</select>
+							<input type="hidden" th:value="${shoe.id}" name="shoeId" />
+							<button type="submit" class="btn btn-secondary">Vote</button>
+						</form>
+					</td>
+					<td th:text="${shoe.popularite}" />
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="d-flex justify-content-center">
+		<form action="#" th:action="@{/accueil}" method="get">
+			<input type="hidden" th:value="${pageNumber}-1" name="pageNumber" />
+			<button type="submit" class="btn btn-secondary mr-1">Previous</button>
+		</form>
+			<label>  </label>
+		<form>
+		</form>
+		<form action="#" th:action="@{/accueil}" method="get">
+			<input type="hidden" th:value="${pageNumber}+1" name="pageNumber" />
+			<button type="submit" class="btn btn-secondary">Next</button>
+		</form>
+	</div>
 </div>
 
 <div th:fragment="new-shoe">
@@ -90,6 +97,6 @@
 		</div>
 	    <input type="hidden" name="type" th:if="${isNew}" th:value="new" />
 		<input type="hidden" name="type" th:if="${isEdit}" th:value="edit" />
-	    <button type="submit" class="btn btn-primary">Save</button>
+	    <button type="submit" class="btn btn-secondary">Save</button>
 	</form>
 </div>
