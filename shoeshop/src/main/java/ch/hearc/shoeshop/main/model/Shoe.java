@@ -12,10 +12,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="shoes")
 public class Shoe {
-	// table fields and table relationship
+		// table fields and table relationship
 		@Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		private Long id;
@@ -26,6 +28,19 @@ public class Shoe {
 		private String color;
 		private BigDecimal price;
 		private BigDecimal size;
+		
+		public Shoe() {
+			
+		}
+		
+		public Shoe(Integer stock, String name, String color, BigDecimal price, BigDecimal size) {
+			super();
+			this.stock = stock;
+			this.name = name;
+			this.color = color;
+			this.price = price;
+			this.size = size;
+		}
 
 		@OneToMany(mappedBy="shoe")
 		private Set<EvaluationShoe> evaluations;

@@ -49,7 +49,7 @@ public class AdminController {
 	 */
 	@GetMapping(value = "/new-shoe")
 	public String showNewShoeForm(Model model) {
-	    model.addAttribute("shoe", new Shoe());   
+	    model.addAttribute("shoe", new Shoe(null, null, null, null, null));   
 	    model.addAttribute("showList",Boolean.FALSE);
 	    model.addAttribute("showNew",Boolean.TRUE);
 	    

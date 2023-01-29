@@ -20,7 +20,7 @@ import ch.hearc.shoeshop.main.repository.ShoeRepository;
 @Service
 public class CatalogServiceImpl implements CatalogService{
 	
-	private static final int PAGE_SIZE = 2; //nb of item per page
+	private static final int PAGE_SIZE = 4; //nb of item per page
 
 	@Autowired
 	ShoeRepository shoeRepository;
