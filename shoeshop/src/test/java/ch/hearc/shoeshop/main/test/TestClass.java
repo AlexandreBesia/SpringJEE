@@ -1,6 +1,7 @@
 package ch.hearc.shoeshop.main.test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.verify;
 
 import org.junit.Test;
@@ -46,12 +47,9 @@ class TestClass {
 	    }
 
 		private void deleteShoe(Long id) {
-			// TODO Auto-generated method stub
-			
 		}
 
 		private String saveShoe(Shoe shoe, String type) {
-			// TODO Auto-generated method stub
 			return null;
 		}
 	}
@@ -71,7 +69,6 @@ class TestClass {
 	    }
 
 		private String showNewShoeForm(Model model) {
-			// TODO Auto-generated method stub
 			return null;
 		}
 
@@ -93,7 +90,6 @@ class TestClass {
 	    }
 
 		private String showNewShoeForm(Model model) {
-			// TODO Auto-generated method stub
 			return null;
 		}
 
@@ -115,10 +111,30 @@ class TestClass {
 	    }
 
 		private String showNewShoeForm(Model model) {
-			// TODO Auto-generated method stub
 			return null;
 		}
 
 	}
+	
+	public class AccueilPageTest {
+
+		@Test
+		public void showAccueilPageTest() {
+			Model model = (Model) new Shoe();
+			String result = showAccueilPage(model, 0);
+			assertEquals(result, "admin/accueil");
+
+			assertEquals(model.getAttribute("showList"), Boolean.TRUE);
+			assertEquals(model.getAttribute("showNew"), Boolean.FALSE);
+			assertEquals(model.getAttribute("isAdmin"), Boolean.TRUE);
+			assertEquals(model.getAttribute("pageNumber"), 0);
+			assertNotNull(model.getAttribute("shoes"));
+		}
+
+		private String showAccueilPage(Model model, int i) {
+			return null;
+		}
+	}
+	
 	
 }
