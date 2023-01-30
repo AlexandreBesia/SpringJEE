@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-		<title>Shoeshop - list of all the shoes</title>
+		<title>Shoeshop - about us</title>
 		<!-- bootstrap -->
 		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 	</head>
@@ -19,17 +19,22 @@
 							<a class="nav-link" href="admin/">Admin<span class="sr-only"></span></a>
 						</li>
 						<li class="nav-item active">
-							<a class="nav-link" href="/about">About us<span class="sr-only"></span></a>
+							<a class="nav-link" href="/accueil">Home<span class="sr-only"></span></a>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
-		<div class="table-responsive">
-    		<table class="table align-middle">
-				<div th:replace="fragment/shoe :: shoe-list"></div>
-    		</table>
+		<div class="container-sm">
+		    <div class="row justify-content-center">
+	            <blockquote class="blockquote text-center">
+	            	<p>Welcom to Shoe shop, your trusted partner for all types of footwear</p>
+	            	<footer class="blockquote-footer">since 1995<cite title="Source Title"></cite></footer>
+	        	</blockquote>
+            </div>
+            <div>
+	            <img src="https://www.timberland-shop.fr/1809-large_default/earthkeepers-6-premium-boot.jpg" class="rounded mx-auto d-block" style="max-width:50%;">
+			</div>
 		</div>
-		<div th:replace="fragment/common :: webjar-footer"></div>
 	</body>
 </html>

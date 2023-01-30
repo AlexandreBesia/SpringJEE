@@ -35,6 +35,16 @@ public class CatalogController {
 	    model.addAttribute("pageNumber", pageNumber);
 		return "accueil"; 
 	}
+	
+	/**
+	 * Return about page template
+	 * @param model
+	 * @return template name
+	 */
+	@GetMapping(value = {"/about"})
+	public String showAboutPage() {
+		return "about"; 
+	}
 
 	
 	/**
