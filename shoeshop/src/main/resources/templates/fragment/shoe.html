@@ -15,7 +15,7 @@
 				  <th scope="col" th:if="${isAdmin}"/>
 				  <th scope="col" th:if="${isAdmin}"/>
 				  <th scope="col" th:if="${isAdmin}"/>
-				  <th scope="col" th:if="${isPublic}">Evaluate</th>
+				  <th scope="col" th:if="${isPublic}"></th>
 				  <th scope="col">Popularity</th>
 				</tr>
 			 </thead>
@@ -38,7 +38,7 @@
 							<button type="submit" class="btn btn-secondary">Modify</button>
 						</form>
 					</td>
-					<td th:if="${isAdmin}">
+					<td>
 						<form action="#" th:action="@{/admin/show-shoe}" th:object="${shoe}" method="post">
 							<input type="hidden" th:value="${shoe.id}" name="id" />
 							<button type="submit" class="btn btn-secondary">Show</button>
