@@ -45,7 +45,7 @@ public class CatalogController {
 	 */
 	@PostMapping(value = {"/evaluate"})
 	public String evaluateShoe(Model model,@RequestParam Integer note,@RequestParam Integer shoeId, @RequestParam Integer pageNumber) {
-	    catalogService.saveEvaluation(shoeId, note);
+	    catalogService.saveEvaluation(shoeId, note, pageNumber);
 		model.addAttribute("shoes", catalogService.getAllShoesFromCatalog(Math.abs(pageNumber)));   
 		return "redirect:/";
 	}

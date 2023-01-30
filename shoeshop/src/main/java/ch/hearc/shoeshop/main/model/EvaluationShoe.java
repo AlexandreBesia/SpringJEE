@@ -66,11 +66,11 @@ public class EvaluationShoe {
 	public Integer getNote() {
 		return note;
 	}
-	public void setNote(Integer note) {
+	public void setNote(Integer note, Integer pageNumber) {
 		this.note = note;
 	}
 	
-	public EvaluationShoe(Integer note) {
+	public EvaluationShoe(Integer note, Integer pageNumber) {
 		this.note = note;
 	}
 }

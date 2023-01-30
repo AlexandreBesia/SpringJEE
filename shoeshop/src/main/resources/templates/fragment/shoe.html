@@ -61,20 +61,36 @@
 				</tr>
 			</tbody>
 		</table>
-	</div>
-	<!-- pagination buttons -->
-	<div class="d-flex justify-content-center">
-		<form action="#" th:action="@{/}" method="get">
-			<input type="hidden" th:value="${pageNumber}-1" name="pageNumber" />
-			<button type="submit" class="btn btn-secondary mr-1"><span class="bi bi-arrow-left"></span></button>
-		</form>
-			<label>  </label>
-		<form>
-		</form>
-		<form action="#" th:action="@{/accueil}" method="get">
-			<input type="hidden" th:value="${pageNumber}+1" name="pageNumber" />
-			<button type="submit" class="btn btn-secondary mr-1"><span class="bi bi-arrow-right"></span></button>
-		</form>
+		<td th:if="${isAdmin}">
+			<div class="d-flex justify-content-center">
+				<form action="#" th:action="@{/admin/}" method="get">
+					<input type="hidden" th:value="${pageNumber}-1" name="pageNumber" />
+					<button type="submit" class="btn btn-secondary mr-1"><span class="bi bi-arrow-left"></span></button>
+				</form>
+					<label>  </label>
+				<form>
+				</form>
+				<form action="#" th:action="@{/admin/}" method="get">
+					<input type="hidden" th:value="${pageNumber}+1" name="pageNumber" />
+					<button type="submit" class="btn btn-secondary mr-1"><span class="bi bi-arrow-right"></span></button>
+				</form>
+			</div>
+		</td>
+		<td th:if="${isPublic}">
+			<div class="d-flex justify-content-center">
+				<form action="#" th:action="@{/}" method="get">
+					<input type="hidden" th:value="${pageNumber}-1" name="pageNumber" />
+					<button type="submit" class="btn btn-secondary mr-1"><span class="bi bi-arrow-left"></span></button>
+				</form>
+					<label>  </label>
+				<form>
+				</form>
+				<form action="#" th:action="@{/accueil}" method="get">
+					<input type="hidden" th:value="${pageNumber}+1" name="pageNumber" />
+					<button type="submit" class="btn btn-secondary mr-1"><span class="bi bi-arrow-right"></span></button>
+				</form>
+			</div>
+		</td>
 	</div>
 </div>
 

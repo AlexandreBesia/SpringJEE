@@ -41,5 +41,5 @@ public interface CatalogService {
 	 * Update an evaluation of a shoe
 	 * @return void
 	 */
-	public void saveEvaluation(Integer shoeId, Integer note);
+	public void saveEvaluation(Integer shoeId, Integer note, Integer pageNumber);
 }

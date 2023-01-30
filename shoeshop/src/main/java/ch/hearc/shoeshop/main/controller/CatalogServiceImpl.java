@@ -85,10 +85,10 @@ public class CatalogServiceImpl implements CatalogService{
 	 * Update an evaluation of a shoe
 	 * @return void
 	 */
-	public void saveEvaluation(Integer shoeId, Integer note) {
+	public void saveEvaluation(Integer shoeId, Integer note, Integer pageNumber) {
 		Shoe shoe = shoeRepository.findById(Long.valueOf(note)).get();
 		
-		EvaluationShoe evaluationShoe =  new EvaluationShoe(note);
+		EvaluationShoe evaluationShoe =  new EvaluationShoe(note, pageNumber);
 		evaluationShoe.setShoe(shoe);
 		evaluationRepository.save(evaluationShoe);
 	}
