@@ -18,6 +18,13 @@ public interface CatalogService {
 	 * @return list of shoes
 	 */
 	public List<Shoe> getAllShoesFromCatalog(int page);
+	
+	/**
+	 * Return all shoes but no pagination
+	 * @return list of shoes
+	 */
+	public List<Shoe> getAllShoesFromCatalogNoPagination();
+
 
 	/**
 	 * Delete a shoe
@@ -42,4 +49,5 @@ public interface CatalogService {
 	 * @return void
 	 */
 	public void saveEvaluation(Integer shoeId, Integer note, Integer pageNumber);
+
 }

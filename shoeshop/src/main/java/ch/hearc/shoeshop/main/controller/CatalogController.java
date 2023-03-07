@@ -34,6 +34,13 @@ public class CatalogController {
 		return "accueil"; 
 	}
 	
+	@GetMapping(value = {"/accueil2"})
+	public String showAccueilPageWithoutPagination(Model model) {
+	    model.addAttribute("shoes", catalogService.getAllShoesFromCatalogNoPagination());   
+	    model.addAttribute("isPublic",Boolean.TRUE);
+		return "accueil"; 
+	}
+	
 	/**
 	 * Return about page template
 	 * @param model

@@ -46,6 +46,17 @@ public class CatalogServiceImpl implements CatalogService{
 		
 		return shoeRepository.findAll(PageRequest.of(page, PAGE_SIZE)).toList();
 	}
+	
+	/**
+	 * Return all shoes, no pagination
+	 * @return list of shoes
+	 */
+	public List<Shoe> getAllShoesFromCatalogNoPagination(){
+		List<Shoe> result = new ArrayList<Shoe>();
+		shoeRepository.findAll().forEach(result::add);
+		
+		return (List<Shoe>) shoeRepository.findAll();
+	}
 
 	/**
 	 * Delete a shoe

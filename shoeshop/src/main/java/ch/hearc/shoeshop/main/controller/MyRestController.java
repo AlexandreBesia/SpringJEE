@@ -20,7 +20,7 @@ public class MyRestController {
 	
 	@GetMapping(value = {"/"})
 	public List<Shoe> getAllShoes(@RequestParam(defaultValue="0") Integer pageNumber) {
-		List<Shoe> shoes = catalogService.getAllShoesFromCatalog(Math.abs(pageNumber)); 
+		List<Shoe> shoes = catalogService.getAllShoesFromCatalogNoPagination(); 
 		return shoes;
 	}
 	
